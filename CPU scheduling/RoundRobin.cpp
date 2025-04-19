@@ -41,17 +41,19 @@ int main() {
     float totalTurnaroundTime = 0;
 
     while (completed < n) {
-        if (q.empty()) {
-            currentTime++;
-            for (int i = 0; i < n; i++) {
-                if (!inQueue[i] && processes[i].arrival_time == currentTime) {
-                    q.push(i);
-                    inQueue[i] = true;
-                }
-            }
-            continue;
+              // Add new processes that have arrived at currentTime
+    for (int i = 0; i < n; i++) {
+        if (!inQueue[i] && processes[i].arrival_time <= currentTime) {
+            q.push(i);
+            inQueue[i] = true;
         }
+    }
 
+    // If the queue is empty, just increment currentTime and check again
+    if (q.empty()) {
+        currentTime++;
+        continue;
+    }
         int idx = q.front();
         q.pop();
 
