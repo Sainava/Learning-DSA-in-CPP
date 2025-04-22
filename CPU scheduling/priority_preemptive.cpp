@@ -58,7 +58,7 @@ int main() {
 
             // If the process just finished
             if (processes[idx].remaining_time == 0) {
-                processes[idx].completion_time = time + 1;
+                processes[idx].completion_time = time;
                 processes[idx].turnaround_time = processes[idx].completion_time - processes[idx].arrival_time;
                 processes[idx].waiting_time = processes[idx].turnaround_time - processes[idx].burst_time;
 
@@ -91,4 +91,5 @@ int main() {
     cout << "Average Turnaround Time: " << total_turnaround_time / n << endl;
 
     return 0;
+}
 }

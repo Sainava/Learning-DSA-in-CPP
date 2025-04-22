@@ -36,11 +36,21 @@ int main(){
     while(completed < n){
         int idx=-1;
         int minBurst=INT_MAX;
-        for(int i=0;i<n;i++){
-        if(!process[i].done  && process[i].arrival_time<=currentTime && process[i].burst_time<minBurst){
-            minBurst=process[i].burst_time;
-            idx=i;
-        }}
+        for (int i = 0; i < n; i++) {
+            if (!process[i].done && process[i].arrival_time <= currentTime) {
+                if (process[i].burst_time < minBurst) {
+                    idx = i;
+                    minBurst = process[i].burst_time;
+                } else if (process[i].burst_time == minBurst) {
+                    // Tie-breaker: choose process with earlier arrival time
+                    if (process[i].arrival_time < process[idx].arrival_time ||
+                        (process[i].arrival_time == process[idx].arrival_time && process[i].id < process[idx].id)) {
+                        idx = i;
+                    }
+                }
+            }
+        }
+        
         if(idx!=-1){
             currentTime=max(currentTime,process[idx].arrival_time);
             process[idx].completion_time=process[idx].burst_time+currentTime;

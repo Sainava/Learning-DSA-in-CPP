@@ -9,6 +9,7 @@ struct Process{
     int arrival_time;
     int burst_time;
     int completion_time;
+    int remaining_time;
     int waiting_time;
     int turnaround_time;
     bool done=false;
@@ -18,7 +19,7 @@ struct Process{
 
 int main(){
     int n;
-    cout << "Enter the number of processes: ";
+    cout << "Enter the number of process: ";
     cin  >> n;
 
     vector <Process> process(n);
@@ -27,6 +28,7 @@ int main(){
         cout <<"Enter the arrival time ,and burst time and priority(lower number=higher priority) of process "<< i+1 << ": ";
         cin >> process[i].arrival_time >> process[i].burst_time>> process[i].priority;
         process[i].id=i+1;
+        process[i].remaining_time = process[i].burst_time;
     }
 
     int completed=0,currentTime=0;
@@ -34,11 +36,18 @@ int main(){
 
     while(completed < n){
         int idx=-1;
-        int minPriority=INT_MAX;
-        for (int i=0;i<n;i++){
-            if(!process[i].done && process[i].arrival_time<=currentTime && process[i].priority<minPriority){
-                minPriority=process[i].priority;
-                idx=i;
+        int highest_priority=INT_MAX;
+        for (int i = 0; i < n; ++i) {
+            if (process[i].arrival_time <= currentTime && process[i].remaining_time > 0) {
+                if (process[i].priority < highest_priority) {
+                    highest_priority = process[i].priority;
+                    idx = i;
+                } else if (process[i].priority == highest_priority) {
+                    // Tie-breaker: earlier arrival time
+                    if (process[i].arrival_time < process[idx].arrival_time) {
+                        idx = i;
+                    }
+                }
             }
         }if(idx!=-1){
             currentTime=max(currentTime,process[idx].arrival_time);

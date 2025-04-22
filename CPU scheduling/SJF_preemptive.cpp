@@ -36,13 +36,20 @@ int main(){
         int idx=-1;
         int minRT=INT_MAX;
 
-        for (int i=0;i<n;i++){
-
-            if(!process[i].done && process[i].arrival_time<=currentTime && process[i].remaining_time<minRT){
-                idx=i;
-                minRT=process[i].remaining_time;
+        for (int i = 0; i < n; i++) {
+            if (!process[i].done && process[i].arrival_time <= currentTime) {
+                if (process[i].remaining_time < minRT) {
+                    idx = i;
+                    minRT = process[i].remaining_time;
+                } else if (process[i].remaining_time == minRT) {
+                    // Tie-breaker: choose process with earlier arrival time
+                    if (process[i].arrival_time < process[idx].arrival_time ||
+                        (process[i].arrival_time == process[idx].arrival_time && process[i].id < process[idx].id)) {
+                        idx = i;
+                    }
+                }
             }
-        }
+        }        
 
         if(idx!=-1){
             currentTime++;
