@@ -31,6 +31,10 @@ int main(){
     cout << "15 : "<< p<<endl;
     cout << "16 : "<< *p<<endl;
 
+    cout << "Just now : "<< &arr[0] << endl;
+    cout << "Just now : "<< &arr << endl;
+    cout << "Just now : "<< arr << endl;
+
     /*
     cout << "17 : "<< &(p+1)<<endl;
     Now, when you do p + 1, you're performing pointer arithmetic. This expression:
@@ -50,8 +54,20 @@ The & operator requires an lvalue (an expression that refers to a memory locatio
     cout << "21 : "<< p<<endl;
     cout << "22 : "<< *&p<<endl;
 
-    int *q=&arr[0];
+    int *a=&arr[0]; 
+    int *b=arr;
+    int (*c)[10]= &arr; // Pointer to the entire array
 
+    cout << a+1 << endl; // Incrementing pointer to the first element ---> Moves 4 bytes 
+    cout << b+1 << endl; // Incrementing pointer to the first element ---> Moves 4 bytes 
+    cout << c+1 << endl; // Incrementing pointer to the entire array ---> Moves 40 bytes (10 * sizeof(int))
+
+    int array[10];
+    cout << "23 : array=array+1 is not allowed as array is not like a normal pointer" << arr<<endl;
+    cout << "24: arr " << arr<<endl;
+    cout << "25: array + 1 : " << arr +1 <<endl;
+    int *p1=arr;
+    cout << "26: "<< p1 + 1 <<endl;
 
 
     
