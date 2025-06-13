@@ -38,7 +38,7 @@ void InsertAtHead(Node * &head,int data){
     head=temp;
 }
 
-void InsertAtTail(Node * head,int data){
+void InsertAtTail(Node * &head,int data){
      Node * newNode=new Node(data);
     if(head==NULL){
         head=newNode;
@@ -74,9 +74,11 @@ void InsertAtPosition(Node * &head,int pos ,int data){
         return;
     }
     newNode->next=temp->next;
-    temp->next->prev=newNode;
-    newNode->prev=temp;
-    temp->next=newNode;
+    if (temp->next != NULL) {
+    temp->next->prev = newNode;
+    }
+    newNode->prev = temp;
+    temp->next = newNode;
 }
 
 void DeleteHead(Node * &head){
