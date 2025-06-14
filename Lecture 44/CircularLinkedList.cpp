@@ -24,38 +24,35 @@ void printList(Node * & head){
         cout << temp->data << " ";
         temp = temp->next;
     } while(temp != head);
+    cout << endl;
 }
 
 void insertAtHead(Node * &head,int data ){
+    Node * newNode=new Node(data);
     if(head==NULL){
-        head = new Node(data);
+        newNode->next=newNode;
+        newNode->prev=newNode;
+        head = newNode;
         return;
     }
-    Node * newNode=new Node(data);
+    Node* tail = head->prev;
     newNode->next=head;
+    newNode->prev=tail;
+    tail->next=newNode;
     head->prev=newNode;
     head=newNode;
-    Node * temp=head;
-    while(temp->next!=NULL){
-        temp=temp->next;
-    }
-    temp->next=head;
-    head->prev=temp;
 }
 
 void insertAtTail(Node * &head, int data){
     if(head==NULL){
-        head = new Node(data);
+        insertAtHead(head, data);
         return;
     }
     Node * newNode=new Node(data);
-    Node * temp=head;
-    while(temp->next!=NULL){
-        temp=temp->next;
-    }
-    temp->next=newNode;
-    newNode->prev=temp;
+    Node * tail=head->prev;
     newNode->next=head;
+    newNode->prev=tail;
+    tail->next=newNode;
     head->prev=newNode;
 }
 
@@ -64,66 +61,52 @@ void insertAtPosition(Node * &head, int pos, int data){
         insertAtHead(head, data);
         return;
     }
-    Node * newNode=new Node(data);
     Node * temp=head;
-    for(int i=1; i<pos-1 && temp!=NULL; i++){
+    for(int i=1; i<pos-1 && temp->next!=head; i++){
         temp=temp->next;
     }
-    if(temp==NULL){
-        cout << "Position out of bounds." << endl;
-        delete newNode;
-        return;
-    }
+    Node * newNode=new Node(data);
     newNode->next=temp->next;
+    newNode->prev=temp;
     temp->next->prev=newNode;
     temp->next=newNode;
-    newNode->prev=temp;
 }
 
 void deleteAtHead(Node * &head){
     if(head==NULL){
-        cout << "List is empty, nothing to delete." << endl;
         return;
     }
-    if(head->next==head){ // Only one node
+    if(head->next==head){
         delete head;
         head = NULL;
         return;
     }
-    Node * temp=head;
-    while(temp->next!=head){
-        temp=temp->next;
-    }
-    Node * toDelete=head;
-    temp->next=head->next;
-    head->next->prev=temp;
-    head=head->next;
+    Node* tail = head->prev;
+    Node* toDelete = head;
+    head = head->next;
+    head->prev = tail;
+    tail->next = head;
     delete toDelete;
 }
 
 void deleteAtTail(Node * &head){
     if(head==NULL){
-        cout << "List is empty, nothing to delete." << endl;
         return;
     }
-    if(head->next==head){ // Only one node
+    if(head->next==head){
         delete head;
         head = NULL;
         return;
     }
-    Node * temp=head;
-    while(temp->next->next!=head){
-        temp=temp->next;
-    }
-    Node * toDelete=temp->next;
-    temp->next=head;
-    head->prev=temp;
-    delete toDelete;
+    Node* tail = head->prev;
+    Node* newTail = tail->prev;
+    newTail->next = head;
+    head->prev = newTail;
+    delete tail;
 }
 
 void deleteAtPosition(Node * &head, int pos){
     if(head==NULL){
-        cout << "List is empty, nothing to delete." << endl;
         return;
     }
     int len=1;
@@ -138,7 +121,7 @@ void deleteAtPosition(Node * &head, int pos){
         return;
     }
     temp=head;
-    for(int i=1; i<pos-1 && temp!=head; i++){
+    for(int i=1; i<pos-1 && temp->next!=head; i++){
         temp=temp->next;
     }
     Node * toDelete=temp->next;
@@ -149,7 +132,6 @@ void deleteAtPosition(Node * &head, int pos){
 
 void deleteUsingValue(Node * &head, int value){
     if(head==NULL){
-        cout << "List is empty, nothing to delete." << endl;
         return;
     }
     Node * temp=head;
@@ -158,25 +140,22 @@ void deleteUsingValue(Node * &head, int value){
             if(temp == head) {
                 deleteAtHead(head);
                 return;
-            } else if(temp->next == head) {
+            } else if(temp->next == head && temp == head->prev) {
                 deleteAtTail(head);
                 return;
             } else {
-                Node * toDelete=temp;
                 temp->prev->next=temp->next;
                 temp->next->prev=temp->prev;
-                delete toDelete;
+                delete temp;
                 return;
             }
         }
         temp = temp->next;
     } while(temp != head);
-    cout << "Value not found, nothing to delete." << endl;
 }
 
 void update(Node * &head,int oldValue,int newValue ){
     if(head==NULL){
-        cout << "List is empty, nothing to update." << endl;
         return;
     }
     Node * temp=head;
@@ -187,15 +166,12 @@ void update(Node * &head,int oldValue,int newValue ){
         }
         temp = temp->next;
     } while(temp != head);
-    cout << "Value not found, nothing to update." << endl;
-
 }
 
 int main(){
-   cout << "Hello, Circular Linked List!" << endl;
    Node* head = NULL;
    insertAtHead(head, 10);
    insertAtHead(head, 20);
    insertAtHead(head, 30);
-
+   printList(head);
 }

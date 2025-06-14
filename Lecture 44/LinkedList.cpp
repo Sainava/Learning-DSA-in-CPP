@@ -1,4 +1,5 @@
 #include<iostream>
+#include<map>
 using namespace std;
 
 class Node {
@@ -10,6 +11,15 @@ class Node {
         this -> data = data;
         this -> next = NULL;
     }
+
+    ~Node(){
+        int value = this ->data;
+        if(this->next!=NULL){
+            delete next;
+            next=NULL;
+        }
+        cout << "Memory freed for node with data: " << value << endl;
+    }
 };
 
 
@@ -17,7 +27,7 @@ class Node {
 void AddatTail(Node * tail,int data){
     Node * newNode=new Node(data);
     if(tail==NULL){
-        tail==newNode;
+        tail=newNode;
         return;
     }
     tail->next=newNode;
@@ -95,7 +105,7 @@ void deleteTail(Node * Head){
         return;
     }
     Node * temp=Head;
-    if(temp->next=NULL){
+    if(temp->next==NULL){
         delete temp;
         Head=NULL;
         return;
@@ -189,6 +199,37 @@ void updateValue(Node * Head, int oldValue, int newValue) {
     }
 }
     
+bool isCircular(Node * head){
+    if(head==NULL){
+        return false;
+    }
+    Node * temp=head;
+    while(temp->next!=NULL && temp->next!=head){
+        temp=temp->next;
+
+    }
+    return temp->next==head;
+}
+
+
+bool isCircularUsingMap(Node * head){
+    if(head==NULL){
+        return false;
+    }
+    map<Node* ,bool> visited;
+    Node * temp=head;
+    while(temp!=NULL){
+        if(visited[temp]){
+            return true;
+        }
+        visited[temp]=true;
+        temp=temp->next;
+    }
+    return false;
+        
+
+    
+}
 
 int main(){
    Node * head= new Node(10);
@@ -200,6 +241,9 @@ int main(){
    printList(head);
    InsertAtPosition(head, 15, 3);
     printList(head);
+
+   //isCircular(head) ? cout << "The linked list is circular." << endl : cout << "The linked list is not circular." << endl;
+   isCircularUsingMap(head) ? cout << "The linked list is circular using map." << endl : cout << "The linked list is not circular using map." << endl;
 
    return 0;
 }
