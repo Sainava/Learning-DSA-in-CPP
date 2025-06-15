@@ -12,19 +12,19 @@ class Node {
         this -> next = NULL;
     }
 
-    ~Node(){
-        int value = this ->data;
-        if(this->next!=NULL){
-            delete next;
-            next=NULL;
-        }
-        cout << "Memory freed for node with data: " << value << endl;
-    }
+    // ~Node(){
+    //     int value = this ->data;
+    //     if(this->next!=NULL){
+    //         delete next;
+    //         next=NULL;
+    //     }
+    //     // cout << "Memory freed for node with data: " << value << endl;
+    // }
 };
 
 
 
-void AddatTail(Node * tail,int data){
+void AddatTail(Node * &tail,int data){
     Node * newNode=new Node(data);
     if(tail==NULL){
         tail=newNode;
@@ -231,19 +231,61 @@ bool isCircularUsingMap(Node * head){
     
 }
 
+Node *removeDuplicates(Node *head)
+{
+    if(head == NULL) return head;
+
+    Node *temp = head;
+
+    while(temp != NULL){
+        Node *inner = temp;
+
+        while(inner->next != NULL){
+            if(inner->next->data == temp->data){
+                Node *toDelete = inner->next;
+                inner->next = toDelete->next;
+                delete toDelete;
+            } else {
+                inner = inner->next;
+            }
+        }
+
+        temp = temp->next;
+    }
+
+    return head;     
+}
+
+
 int main(){
    Node * head= new Node(10);
 
-   cout << "Head data: " << head->data << endl;
-   cout << "Head next: " << head->next << endl;
-   InsertAtHead(head,1);
-   InsertAtTail(head,20);
-   printList(head);
-   InsertAtPosition(head, 15, 3);
+//    cout << "Head data: " << head->data << endl;
+//    cout << "Head next: " << head->next << endl;
+//    InsertAtHead(head,1);
+//    InsertAtTail(head,20);
+//    printList(head);
+//    InsertAtPosition(head, 15, 3);
+//     printList(head);
+
+//    //isCircular(head) ? cout << "The linked list is circular." << endl : cout << "The linked list is not circular." << endl;
+//    isCircularUsingMap(head) ? cout << "The linked list is circular using map." << endl : cout << "The linked list is not circular using map." << endl;
+
+//    deleteHead(head); 
+     InsertAtPosition(head, 5, 2);
+     InsertAtPosition(head, 15, 3);
+    InsertAtPosition(head, 15, 4);
+    InsertAtPosition(head, 15, 5);
+    InsertAtPosition(head, 25, 6);
+    InsertAtPosition(head, 25, 7);
+    cout << "Linked List after insertions: ";
     printList(head);
 
-   //isCircular(head) ? cout << "The linked list is circular." << endl : cout << "The linked list is not circular." << endl;
-   isCircularUsingMap(head) ? cout << "The linked list is circular using map." << endl : cout << "The linked list is not circular using map." << endl;
+    head=removeDuplicates(head);
+    cout << "Linked List after removing duplicates: ";
+    printList(head);
+
+
 
    return 0;
 }
