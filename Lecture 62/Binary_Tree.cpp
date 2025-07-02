@@ -26,7 +26,7 @@ class Node{
         right=NULL;
     }        
 };
-
+// Function to build a binary tree from user input
 Node * buildTree(Node * root){
     cout<< "Enter the data for the node: " << "\t";
     int data;
@@ -81,7 +81,7 @@ void levelOrderTraversal(Node * root){
     }
     
 }
-
+// Traversals of the binary tree
 void inOrder(Node * root){
     if(root==NULL){
         return;
@@ -90,7 +90,7 @@ void inOrder(Node * root){
     cout<< root->data << " ";
     inOrder(root->right);
  }
-
+// Preorder traversal visits the root first, then left subtree, then right subtree
 void preOrder(Node * root){
     if(root==NULL){
         return;
@@ -99,7 +99,7 @@ void preOrder(Node * root){
     preOrder(root->left);
     preOrder(root->right);
  }
-
+// Postorder traversal visits the left subtree first, then right subtree, then root
  void postOrder(Node * root){
     if(root==NULL){
         return;
@@ -108,7 +108,7 @@ void preOrder(Node * root){
     postOrder(root->right);
     cout<< root->data << " ";
  }
-
+// Reverse level order traversal uses a queue to traverse the tree and a stack to reverse the order
  void ReverseLevelOrderTraversal(Node * root){
     if(root==NULL){
         return;
