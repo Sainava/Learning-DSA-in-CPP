@@ -26,6 +26,7 @@ public:
         // This can be used to initialize an empty graph
     }
 
+    // TC: O(1) for adding an edge in adjacency list
     void addEdgeMatrix(T u, T v, bool directed=false) {
         // Function to add an edge in the adjacency matrix
         adjMatrix[u][v] = 1;
@@ -42,6 +43,8 @@ public:
         }
     }
 
+    // TC: O(V+E) for displaying the graph using adjacency list
+    // where V is the number of vertices and E is the number of edges
     void display() {
         // Function to display the graph
         
