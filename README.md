@@ -1,10 +1,10 @@
-# 🚀 Learning Data Structures & Algorithms in C++
+# Learning Data Structures & Algorithms in C++
 
 This repository contains a **comprehensive collection of Data Structures and Algorithms implementations** in C++. It covers everything from **basic C++ fundamentals to advanced graph algorithms**, with **lecture-wise organized content** and **practical implementations**.
 
 ---
 
-## 📂 Repository Structure  
+## Repository Structure  
 
 ```bash
 Learning-DSA-in-CPP/
@@ -31,51 +31,51 @@ Learning-DSA-in-CPP/
 
 ---
 
-## 🎯 Topics Covered  
+## Topics Covered  
 
 ### 🏗️ **C++ Fundamentals (Basic/)**
-✅ Data Types, Variables, and Operators  
-✅ Loops and Conditional Statements  
-✅ Functions (Pass by Value & Reference)  
-✅ Bitwise Operations & Number Systems
-✅ Prime Numbers & Mathematical Functions
-✅ Fibonacci Series & Power Functions
+Data Types, Variables, and Operators  
+Loops and Conditional Statements  
+Functions (Pass by Value & Reference)  
+Bitwise Operations & Number Systems
+Prime Numbers & Mathematical Functions
+Fibonacci Series & Power Functions
 
-### 🎨 **Pattern Programming (patterns/)**
-🔸 7 Different Pattern Types
-🔸 Star Patterns, Number Patterns
-🔸 Pyramid and Diamond Patterns
+### **Pattern Programming (patterns/)**
+7 Different Pattern Types
+Star Patterns, Number Patterns
+Pyramid and Diamond Patterns
 
-### 🏛️ **Object-Oriented Programming (OOPS/)**
-🔹 Classes & Objects  
-🔹 4 Pillars of OOP
-🔹 Inheritance & Polymorphism  
-🔹 Encapsulation & Abstraction  
+###  **Object-Oriented Programming (OOPS/)**
+ Classes & Objects  
+ 4 Pillars of OOP
+ Inheritance & Polymorphism  
+ Encapsulation & Abstraction  
 
-### 📦 **Standard Template Library (STL/)**
+###  **Standard Template Library (STL/)**
 - **Containers:** Vectors, Sets, Maps, Stacks, Queues  
 - **Algorithms:** Sorting, Searching, STL Functions
 - **Iterators & Custom Comparators**  
 
-### � **Searching Algorithms (Search/)**
+###  **Searching Algorithms (Search/)**
 - Linear Search Implementation
 - Binary Search & Variations
 - Square Root using Binary Search
 - Aggressive Cows Problem
 - Book Allocation Problem
 
-### 📊 **Arrays (Arrays/)**
+###  **Arrays (Arrays/)**
 - Array Operations & Manipulations
 - Array Reversal & Rotation
 - Sum Calculations & Updates
 - Pivot Finding Algorithms
 
-### 🌳 **Trees (Tree/)**
+###  **Trees (Tree/)**
 - Tree Creation & Traversal
 - Binary Trees Implementation
 - Tree Algorithms & Operations
 
-### 📚 **Advanced Topics (Lecture Series)**
+###  **Advanced Topics (Lecture Series)**
 
 #### **Lecture 60-62: Queue Implementation**
 - Queue using STL
@@ -97,7 +97,7 @@ Learning-DSA-in-CPP/
 - Tarjan's Algorithm Implementation
 - Graph Theory Applications
 
-### 🖥️ **Operating System Concepts**
+###  **Operating System Concepts**
 #### **CPU Scheduling Algorithms**
 - First Come First Serve (FCFS)
 - Shortest Job First (SJF) - Preemptive & Non-Preemptive
@@ -111,7 +111,7 @@ Learning-DSA-in-CPP/
 
 ---
 
-## 🌟 **Practice Resources**
+##  **Practice Resources**
 
 For additional practice problems and coding challenges, check out:
 
@@ -122,7 +122,7 @@ For additional practice problems and coding challenges, check out:
 
 ---
 
-## 🛠️ Installation & Setup  
+## 🛠 Installation & Setup  
 
 ### Prerequisites
 Make sure you have a **C++ compiler** installed:
@@ -160,7 +160,7 @@ g++ Articulation_points.cpp -o articulation
 
 ---
 
-## 📈 **Learning Path**
+##  **Learning Path**
 
 ### **Beginner Level**
 1. Start with `Basic/` folder - Master C++ fundamentals
@@ -182,26 +182,25 @@ g++ Articulation_points.cpp -o articulation
 
 ## 🏆 **Key Achievements**
 
-✅ **100+ C++ Programs** implemented  
-✅ **Complete DSA Coverage** from basics to advanced  
-✅ **Graph Algorithms** including Articulation Points  
-✅ **Operating System Concepts** with practical implementations  
-✅ **STL Mastery** with real-world applications  
-✅ **Pattern Programming** for logical skill development  
+ **100+ C++ Programs** implemented  
+ **Complete DSA Coverage** from basics to advanced  
+ **Graph Algorithms** including Articulation Points  
+ **Operating System Concepts** with practical implementations  
+ **STL Mastery** with real-world applications  
+ **Pattern Programming** for logical skill development  
 
 ---
 
-## 🤝 **Contributing**
+##  **Contributing**
 
 Feel free to:
-- 🐛 Report bugs or issues
-- 💡 Suggest improvements
-- 📝 Add more algorithms or optimizations
-- 🔄 Submit pull requests
+-  Suggest improvements
+-  Add more algorithms or optimizations
+- Submit pull requests
 
 ---
 
-## 📞 **Connect With Me**
+##  **Connect With Me**
 
 **GitHub:** [@Sainava](https://github.com/Sainava)  
 **Repository:** [Learning-DSA-in-CPP](https://github.com/Sainava/Learning-DSA-in-CPP)
@@ -209,6 +208,6 @@ Feel free to:
 ---
 
 
-⭐ **If this repository helped you learn DSA, please give it a star!** ⭐
+ **If this repository helped you learn DSA, please give it a star!** 
 
-*Happy Coding! 🚀*
+*Happy Coding! *
