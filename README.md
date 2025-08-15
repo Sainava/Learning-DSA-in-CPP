@@ -1,10 +1,73 @@
 # Learning Data Structures & Algorithms in C++
 
-This repository contains a **comprehensive collection of Data Structures and Algorithms implementations** in C++. It covers everything from **basic C++ fundamentals to advanced graph algorithms**, with **lecture-wise organized content** and **practical implementations**.
+This repository contains a **comprehensive collection of Da### 🖥️ **Operating System Concepts**
+### 🌟 **Practice Resources**
+
+**This repository now incl## 📈 **Learning Path**
+
+### **Beginner Le## 🏆 **Key Achievements**
+
+**100+ C++ Programs** implemented  
+**Complete DSA Coverage** from basics to advanced  
+**Graph Algorithms** including Articulation Points  
+**Operating System Concepts** with practical implementations  
+**STL Mastery** with real-world applications  
+**Pattern Programming** for logical skill development  
+**Competitive Programming Solutions** from LeetCode and CodeStudio  
+**Dynamic Programming** implementations with multiple approaches  
+**Real Problem-Solving** experience with popular coding platforms Start with `Basic/` folder - Master C++ fundamentals
+2. Practice `patterns/` - Develop logical thinking
+3. Learn `OOPS/` concepts - Object-oriented programming
+
+### **Intermediate Level** 
+4. Explore `Arrays/` operations
+5. Master `Search/` algorithms
+6. Understand `Standard Template Library/`
+7. Try problems in `CODESTUDIO/Vector/` for practical application
+
+### **Advanced Level**
+8. Implement `Tree/` data structures
+9. Study `CPU scheduling/` algorithms
+10. Master Graph algorithms (`Lecture 85`, `Lecture 99`)
+11. Solve Dynamic Programming problems (`CODESTUDIO/Dynamic Programming/`, `LeetCode/`)
+12. Practice complex problems in `Exam/` folder
+
+### **Expert Level**
+13. Explore competitive programming solutions in `LeetCode/` and `CODESTUDIO/`
+14. Apply learned concepts to solve real-world problemsem solutions from:**
+
+**LeetCode:** [Sainava's Profile](https://leetcode.com/u/Sainava/) - Solutions available in `LeetCode/` folder  
+**CodeStudio/Coding Ninjas:** [Sainava's Profile](https://www.naukri.com/code360/profile/806ea363-c230-4810-810e-938ae3d92c6e) - Solutions available in `CODESTUDIO/` folder
+
+*Note: Missing lecture numbers correspond to practice sessions on these platforms. The actual solutions from these sessions are now included in the respective folders.*U Scheduling Algorithms**
+- First Come First Serve (FCFS)
+- Shortest Job First (SJF) - Preemptive & Non-Preemptive
+- Priority Scheduling - Preemptive & Non-Preemptive
+- Round Robin with Time Quantum
+- Round Robin Dispatcher
+
+#### **Deadlock Prevention**
+- Banker's Algorithm Implementation
+- Resource Allocation & Safety Algorithms
+
+### 💻 **Competitive Programming Solutions**
+
+#### **CodeStudio/Coding Ninjas Problems (CODESTUDIO/)**
+- **Dynamic Programming:**
+  - Fibonacci Number Implementation
+  - Ways to Reach Nth Stairs
+- **Vector Operations:**
+  - Sort 0, 1, 2 (Dutch National Flag Problem)
+
+#### **LeetCode Problems (LeetCode/)**
+- **Problem #746:** Min Cost Climbing Stairs
+- **Dynamic Programming:** Various DP solutions and approaches
+
+*These sections contain real problem solutions from popular coding platforms, demonstrating practical application of DSA concepts.*es and Algorithms implementations** in C++. It covers everything from **basic C++ fundamentals to advanced graph algorithms**, with **lecture-wise organized content** and **practical implementations**.
 
 ---
 
-## Repository Structure  
+## 📂 Repository Structure  
 
 ```bash
 Learning-DSA-in-CPP/
@@ -19,6 +82,14 @@ Learning-DSA-in-CPP/
 ├── CPU scheduling/             # Operating System Scheduling Algorithms
 ├── Bankers_Algo/              # Banker's Algorithm for Deadlock Avoidance
 ├── Exam/                      # Practice Problems & Exam Questions
+│
+├── CODESTUDIO/                # CodeStudio/Coding Ninjas Problems
+│   ├── Dynamic Programming/   # DP Problems (Fibonacci, Stairs)
+│   └── Vector/               # Vector-based Problems (Sort 0,1,2)
+│
+├── LeetCode/                  # LeetCode Problem Solutions
+│   ├── Dynamic Programming/   # DP Problems from LeetCode
+│  
 │
 ├── Lecture 20-26/             # Foundation Lectures
 ├── Lecture 33-36/             # Intermediate Concepts
