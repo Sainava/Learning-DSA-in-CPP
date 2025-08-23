@@ -1,11 +1,11 @@
 # Learning Data Structures & Algorithms in C++
 
-This repository contains a **comprehensive collection of Da### 🖥️ **Operating System Concepts**
+This repository documents my journey of learning cpp and Data Structures and Algorihtms
 ### 🌟 **Practice Resources**
 
-**This repository now incl## 📈 **Learning Path**
 
-### **Beginner Le## 🏆 **Key Achievements**
+
+### Beginner Level   🏆 **Key Achievements**
 
 **100+ C++ Programs** implemented  
 **Complete DSA Coverage** from basics to advanced  
@@ -281,4 +281,4 @@ Feel free to:
 
  **If this repository helped you learn DSA, please give it a star!** 
 
-*Happy Coding! *
+
