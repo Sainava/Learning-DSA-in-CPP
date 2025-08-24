@@ -65,3 +65,65 @@ vector<int> topologicalSort(vector<vector<int>> &edges, int v, int e)  {
     //SC:O(V+E)
     return ans;
 }
+
+
+//Solution 2: BFS or Kahn's algo
+
+vector<int> topologicalSort(vector<vector<int>> &edges, int v, int e)  {
+    //Topological Sort using Kahn's Algo
+
+    //Create the adj list
+    //SC:O(V+E)
+    unordered_map<int,vector<int>> adj;
+
+    //TC:O(E)
+    for(auto p:edges){
+        int u=p[0];
+        int v=p[1];
+
+        adj[u].push_back(v);
+    }
+
+    //Create the indegree list
+    vector<int> indegree(v);
+
+    //TC:O(V+E)
+    for(auto pairs:adj){
+        for(auto neighbour:pairs.second){
+            indegree[neighbour]++;
+        }
+    }
+
+    queue<int> q;
+
+    //Push the nodes with indegree 0 into the queue
+
+    //TC:O(V)
+    for(int i=0;i<v;i++){
+        if(indegree[i]==0){
+            q.push(i);
+        }
+    }
+
+    vector<int> ans;
+
+    //Do the Modified BFS
+    //TC:O(V+E)
+    while(!q.empty()){
+        int frontNode=q.front();
+        q.pop();
+
+        ans.push_back(frontNode);
+
+        for(auto neighbour:adj[frontNode]){
+            indegree[neighbour]--;
+            if(indegree[neighbour]==0){
+                q.push(neighbour);
+            }
+        }
+    }
+
+    //TC:O(V+E)
+    //SC:O(V+E)
+    return ans;
+}
