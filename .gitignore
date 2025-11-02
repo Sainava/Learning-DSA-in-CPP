@@ -1,3 +1,26 @@
+#############################################
+# Only keep C++ source files in the repo    #
+# (track *.cpp anywhere; ignore everything) #
+#############################################
+
+# 1) Ignore everything by default
+*
+
+# 2) But allow directory traversal
+!*/
+
+# 3) Keep this file
+!.gitignore
+
+# 4) Keep all C++ source files
+!*.cpp
+
+# Optional: still ignore Code Runner temp file
+tempCodeRunnerFile.cpp
+
+# You can remove rules below; they are redundant because of '*',
+# but kept here as documentation of typical build outputs.
+
 # Prerequisites
 *.d
 
@@ -32,4 +55,3 @@
 *.out
 *.app
 .vscode/
-tempCodeRunnerFile.cpp
